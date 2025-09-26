@@ -8,8 +8,7 @@ const int LimitPins[] = {limit,button};
 
 //Pins for all door motors (Relay control)
 const int doorPins[] = {1,2,3,4,5,6};
-// Automatically get pin count based on amount of pins in arr
-// this will allow the code to "expand" as more motors/doors are added.
+
 const int LimPinCount = sizeof(LimitPins)/sizeof(LimitPins[0]);
 const int doorPinCount = sizeof(doorPins)/sizeof(doorPins[0]);
 
@@ -26,18 +25,9 @@ void setup() {
 void checkState(){
    // Loop over array
   for (int i = 0; i < LimPinCount; i++) {
-      /*Print testing
-      
-        Serial.print("Pin ");
-        Serial.print(pins[i]);
-        Serial.print(" state: ");
-        Serial.println(digitalRead(pins[i]));
-        */
+   
     if (digitalRead(LimitPins[i]) == 1) {
-      //toggle motor power on for that door.
-      //Code would be slightly more efficient if we break here to avoid additional loops but would require
-      //electronics to be pretty bullet proof(AKA we are certain that two doors would never be open)
-      //This kind of optimization is probably unneccesary
+
     }     
   }
 }
